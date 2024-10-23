@@ -3,7 +3,7 @@
 #include <algorithm>
 
 int main() {
-    std::string s1;
+    std::string s1 {};
     std::cout << "Enter a word:" << std::endl;
     std::cin >> s1;
     std::string temp = s1;
