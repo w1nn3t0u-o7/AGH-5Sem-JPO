@@ -3,18 +3,18 @@
 
 class Student {
 public:
-    std::string name {}, faculty {};
+    std::string name {};
     int age {};
 
     // default constructor
     Student() {
         name = "unknown";
         age = 0;
-        faculty = "what?";
+        m_faculty = "what?";
     }
 
     // parameterized constructor
-    Student(std::string n, int a, std::string f) : name(n), age(a), faculty(f) {
+    Student(std::string n, int a, std::string f) : name(n), age(a), m_faculty(f) {
         // body of a constructor
     }
 

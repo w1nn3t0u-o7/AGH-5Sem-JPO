@@ -2,15 +2,23 @@
 
 class Circle {
 private:
-    double *radius;
+    double* radius;
     Point center;
 public:
     Circle(double r, double centX, double centY): center(centX, centY) {
+        if (r < 0) {
+            std::cout << "Radius cannot be a negative number!" << std::endl;
+        }else {
         radius = new double;
         *radius = r;
+        }
     }
     void setRadius(double r) {
-        *radius = r;
+        if (r < 0) {
+            std::cout << "Radius cannot be a negative number!" << std::endl;
+        }else {
+            *radius = r;
+        }
     }
     double getRadius() const {
         return *radius;
