@@ -2,6 +2,7 @@
 
 #include "Rectangle.hpp"
 #include "Square.hpp"
+#include "Circle.hpp"
 
 int main() {
     Rectangle rectangle(4, 5, Point(12, 14));
@@ -22,5 +23,16 @@ int main() {
     rectangle2.description();
     std::cout << "Area of rectangle is: " << rectangle2.area() << std::endl;
 
+    Circle circle(5, Point(4, 20));
+    circle.introduce();
+    circle.description();
+    std::cout << "Area of circle is: " << circle.area() << std::endl;
+
+    Circle circle2 = circle;
+    circle2.setCentre(Point(21, 37));
+    circle2.setRadius(69);
+    circle2.introduce();
+    circle2.description();
+    std::cout << "Area of circle is: " << circle2.area() << std::endl;
     return 0;
 }
