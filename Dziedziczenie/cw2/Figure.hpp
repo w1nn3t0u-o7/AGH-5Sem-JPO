@@ -10,8 +10,7 @@ private:
     std::string m_name;
 public:
     // parametrized constructor
-    Figure(const Point &p, std::string name) : m_centre(p), m_name(name) {
-    };
+    Figure(const Point &p, std::string name) : m_centre(p), m_name(name) {};
 
     virtual double area() const = 0;
     virtual void description() const = 0;

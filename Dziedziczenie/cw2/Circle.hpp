@@ -5,10 +5,19 @@ class Circle : public Figure {
 private:
     double m_radius;
 public:
-    Circle(double r, const Point &p) : m_radius(std::abs(r)), Figure(p, "circle") {
+    Circle(double r, const Point &p) : Figure(p, "circle") {
+        if (r < 0) {
+            std::cout << "Error: Radius length must be a positive number!" << std::endl;
+        } else {
+            m_radius = r;
+        }
     }
     void setRadius(double r) {
-        m_radius = std::abs(r);
+        if (r < 0) {
+            std::cout << "Error: Radius length must be a positive number!" << std::endl;
+        } else {
+            m_radius = r;
+        }
     }
     double getRadius() const {
         return m_radius;

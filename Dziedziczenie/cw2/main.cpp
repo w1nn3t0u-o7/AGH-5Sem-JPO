@@ -18,19 +18,20 @@ int main() {
     Rectangle rectangle2 = rectangle;
     rectangle2.setCentre(Point(21, 37));
     rectangle2.setA(10);
-    rectangle2.setB(-5);
+    rectangle2.setB(-6);
     rectangle2.introduce();
     rectangle2.description();
     std::cout << "Area of rectangle is: " << rectangle2.area() << std::endl;
 
     Circle circle(5, Point(4, 20));
+    circle.setRadius(-6);
     circle.introduce();
     circle.description();
     std::cout << "Area of circle is: " << circle.area() << std::endl;
 
     Circle circle2 = circle;
     circle2.setCentre(Point(21, 37));
-    circle2.setRadius(69);
+    circle2.setRadius(9);
     circle2.introduce();
     circle2.description();
     std::cout << "Area of circle is: " << circle2.area() << std::endl;
