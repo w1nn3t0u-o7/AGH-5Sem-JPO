@@ -77,18 +77,24 @@ public:
 
     ComplexNumber operator/(const ComplexNumber& other) const {
         double denom = other.m_real * other.m_real + other.m_imag * other.m_imag;
-        double real = (m_real * other.m_real + m_imag * other.m_imag) / denom;
-        double imag = (m_imag * other.m_real - m_real * other.m_imag) / denom;
-        return ComplexNumber(real,imag);
+        if (denom != 0) {
+            double real = (m_real * other.m_real + m_imag * other.m_imag) / denom;
+            double imag = (m_imag * other.m_real - m_real * other.m_imag) / denom;
+            return ComplexNumber(real,imag);
+        } else {
+            return 1;
+        }
     }
 
     ComplexNumber& operator/=(const ComplexNumber& other ){
         double denom = other.m_real * other.m_real + other.m_imag * other.m_imag;
-        double real = (m_real * other.m_real + m_imag * other.m_imag) / denom;
-        double imag = (m_imag * other.m_real - m_real * other.m_imag) / denom;
-        m_real =real;
-        m_imag =imag;
-        return *this;
+        if (denom != 0) {
+            double real = (m_real * other.m_real + m_imag * other.m_imag) / denom;
+            double imag = (m_imag * other.m_real - m_real * other.m_imag) / denom;
+            m_real =real;
+            m_imag =imag;
+            return *this;
+        } 
     }
 
     bool operator==(const ComplexNumber& other) const {
@@ -98,6 +104,7 @@ public:
     bool operator!=(const ComplexNumber& other) const {
         return !(*this == other);
     }
+
     ComplexNumber operator=(const ComplexNumber& other) {
         m_real = other.m_real;
         m_imag = other.m_imag;
@@ -105,7 +112,7 @@ public:
     }
 
     friend std::ostream& operator<<(std::ostream& os, const ComplexNumber& c) {
-        os << "(" << c.m_real << ", " << c.m_imag <<"i"<< ")";
+        os << c.m_real << (c.m_imag >= 0 ? " + " : " - ") << std::abs(c.m_imag) << "i";
         return os;
     }
 };

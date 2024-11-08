@@ -1,44 +1,45 @@
 #include "ComplexNumber.hpp"
 
-int main(){
-    ComplexNumber c1(6.0, -9.0);
-    ComplexNumber c2(4.0, 2.0);
-    double number = 21.37;
-    std::cout<<"c1: "<<c1<<std::endl;
-    std::cout<<"c2: "<<c2<<std::endl;
+int main() {
+    ComplexNumber c1(4.0, -2.0);
+    ComplexNumber c2(17.0, 9.0);
+    double value = 54.93;
 
-    ComplexNumber c3=c1+c2;
-    std::cout<<"c1+c2: "<<c3<<std::endl;
+    std::cout << "c1: " << c1 << std::endl;
+    std::cout << "c2: " << c2 << std::endl;
+
+    ComplexNumber c3 = c1 + c2;
+    std::cout << "c1 + c2: " << c3 << std::endl;
     
-    c1+=c2;
-    std::cout<<"c1 += c2: "<<c1<<std::endl;
+    c1 += c2;
+    std::cout << "c1 += c2: " << c1 << std::endl;
 
-    c1 += number;
-    std::cout<<"c1 += "<<number<< ": "<< c1<<std::endl;
+    c1 += value;
+    std::cout << "c1 += " << value << ": " << c1 << std::endl;
 
-    ComplexNumber c4 = c1-c2;
-    std::cout<< "c1- c2: "<<c4<<std::endl;
+    ComplexNumber c4 = c1 - c2;
+    std::cout << "c1 - c2: " << c4 << std::endl;
 
-    c1-=c2;
-    std::cout<< "c1-= c2: "<<c1<<std::endl;
+    c1 -= c2;
+    std::cout << "c1 -= c2: " << c1 << std::endl;
 
-    ComplexNumber c5=c1*c2;
-    std::cout<< "c1* c2: "<<c5<<std::endl;
+    ComplexNumber c5 = c1 * c2;
+    std::cout << "c1 * c2: " << c5 << std::endl;
 
-    c1 *=c2;
-    std::cout<<"c1 *=c2: "<< c1<<std::endl;
+    c1 *= c2;
+    std::cout << "c1 *= c2: " << c1 << std::endl;
 
-    ComplexNumber c6 = c1/c2;
-    std::cout<< "c1/c2: "<<c6<<std::endl;
+    ComplexNumber c6 = c1 / c2;
+    std::cout << "c1 / c2: " << c6 << std::endl;
 
     c1/=c2;
-    std::cout<< "c1/=c2: "<<c1<<std::endl;
+    std::cout << "c1 /= c2: " << c1 << std::endl;
 
-    bool equal = c1==c2;
-    std::cout<< "c1==c2: "<< equal<<std::endl;
+    bool equal = c1 == c2;
+    std::cout << "c1 == c2: " << equal << std::endl;
 
-    bool notEqual = c1!=c2;
-    std::cout << "c1 != c2"<< notEqual<<std::endl;
+    bool notEqual = c1 != c2;
+    std::cout << "c1 != c2: " << notEqual << std::endl;
     
     return 0;
 }
